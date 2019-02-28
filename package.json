@@ -1,11 +1,15 @@
 {
   "name": "suppress-js",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register spec/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yantrab/suppressJS.git"
   },
   "author": "Yaniv Trabelsi <yantrab@gmail.com>",
   "license": "ISC",
