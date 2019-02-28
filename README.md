@@ -1,5 +1,5 @@
 # suppressJS
-Suppress your json object to decrease the response size.
+Suppress json object to decrease the response size.
 
 # Usage
 suppress response data by:
