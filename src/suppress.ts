@@ -1,15 +1,17 @@
 const _suppress = (obj, idProp:string, suppressData) => {
     const keys = Object.keys(obj);
     for (const key of keys) {
-        let value = obj[key];
+        let value = obj[key]
         if (typeof (value) !== 'object') continue;
 
         const id = value[idProp]
         if (!id) _suppress(value, idProp, suppressData)
         else {
             if (!suppressData[key]) suppressData[key] = {}
-            delete value[idProp]
-            suppressData[key][id] = value;
+            let cloneValue = Object.assign({},{...obj[key]});
+
+            delete cloneValue[idProp]
+            suppressData[key][id] = cloneValue;
             obj[key] = id;
         }
     }

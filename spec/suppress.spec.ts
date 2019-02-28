@@ -36,6 +36,7 @@ describe('suppress', function () {
     expect(result.data.a.c.b).to.be.equal(1);
     expect(result.suppressData['b'][1]).to.deep.equal({ content: "content" })
   });
+  
 
   it('performace', function () {
     const duplicate = { _id: 1, content: "content" }
