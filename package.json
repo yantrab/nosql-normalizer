@@ -1,9 +1,9 @@
 {
   "name": "suppress-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
-  "types" : "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register spec/**/*.ts"
   },
