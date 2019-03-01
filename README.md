@@ -2,8 +2,8 @@
 Suppress json object to speed rest api, by removing duplicate entities
 
 ## What suppressJS does
-If you are using nosql database, and your table is look like this, so do suppress of this json, exlude all entities to a nother store object.
-See here the result.
+If you are using nosql database, and your table is look like [this](https://github.com/yantrab/suppressJS/blob/master/spec/funds.json), so do suppress of this json, exlude all entities to a nother store object.
+See [here](https://github.com/yantrab/suppressJS/blob/master/spec/fundsAfterSuppress.json) the result.
 
 ## Why should i use this package
 
@@ -24,7 +24,6 @@ npm i suppress-js
 import { suppress, deSuppress } from 'suppress-js';
 suppress(result);
 ```
-[Here](https://github.com/yantrab/nest-angular/blob/master/server/src/middlewares/suppress.middleware.ts) is an example of express middleware 
 
 ### de-suppress response data by
  ```javascript 
