@@ -1,5 +1,5 @@
 # suppressJS
-Suppress json object to speed rest api, by removing duplicate entities
+Suppress json object to speed up your rest api, by removing duplicate entities
 
 ## What suppressJS does
 If you are using nosql database, and your table is look like [this](https://github.com/yantrab/suppressJS/blob/master/spec/funds.json), so do suppress of this json, exlude all entities to a nother store object.
