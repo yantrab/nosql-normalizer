@@ -22,7 +22,7 @@ npm i suppress-js
 ### suppress response data by:
 ```javascript
 import { suppress, deSuppress } from 'suppress-js';
-suppress(result);
+suppress(result, //* id property, defualt :'_id'*//);
 ```
 
 ### de-suppress response data by
