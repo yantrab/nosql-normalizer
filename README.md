@@ -1,5 +1,12 @@
 # suppressJS
-Suppress json object to decrease response object size, by removing duplicate entities
+Suppress json object to speed rest api, by removing duplicate entities
+
+## What suppressJS do
+If you are using nosql database, and your table is look like this, so do suppress of this json, exlude all entities to a nother store object.
+See here see the result.
+
+## Why should i use this package
+
 
 # Usage
 install by npm

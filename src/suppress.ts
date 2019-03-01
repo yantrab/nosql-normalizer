@@ -1,4 +1,4 @@
-const _suppress = (obj, idProp:string, suppressData) => {
+const _suppress = (obj, idProp: string, suppressData) => {
     const keys = Object.keys(obj);
     for (const key of keys) {
         let value = obj[key]
@@ -8,10 +8,10 @@ const _suppress = (obj, idProp:string, suppressData) => {
         if (!id) _suppress(value, idProp, suppressData)
         else {
             if (!suppressData[key]) suppressData[key] = {}
-            let cloneValue = Object.assign({},{...obj[key]});
-
+            let cloneValue = Object.assign({}, { ...obj[key] });
+            suppressData[key][id] = cloneValue; 
+            _suppress(cloneValue, idProp, suppressData);
             delete cloneValue[idProp]
-            suppressData[key][id] = cloneValue;
             obj[key] = id;
         }
     }
