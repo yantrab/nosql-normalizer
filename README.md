@@ -1,33 +1,33 @@
-# suppressJS
-Suppress json object to speed up your rest api, by removing duplicate entities
+# nosql-normalizer
+Reduce json object, by normalized it, to speed up your rest api.
 
-## What suppressJS does
-If you are using nosql database, and your table is look like [this](https://github.com/yantrab/suppressJS/blob/master/spec/funds.json), so do suppress of this json, exlude all entities to a nother store object.
-See [here](https://github.com/yantrab/suppressJS/blob/master/spec/fundsAfterSuppress.json) the result.
+## What nosql-normalizer does
+If you are using nosql database, and your table is look like [this](https://github.com/yantrab/nosql-normalizer/blob/master/spec/funds.json), so do normalize of this json, exlude all entities to a nother store object.
+See [here](https://github.com/yantrab/nosql-normalizer/blob/master/spec/fundsAfterSuppress.json) the result.
 
 ## Why should i use this package
 
 1. decrease response size, in my example, 674 kb became to 140kb;
    end response time  53ms became to 33ms.
-2. decrease memory size, if you store the object in memory, using suppress and de-supress,
+2. decrease memory size, if you store the object in memory, using normalize and de-normalize,
    does decrease  memory size dramaticaly.
    in my exmple, 755780B became to 189296B.
 
 # Usage
 install by npm
 ```
-npm i suppress-js
+npm i nosql-normalizer
 ```
 
-### suppress response data by:
+### normalize response data by:
 ```javascript
-import { suppress, deSuppress } from 'suppress-js';
-suppress(result, //* id property, defualt :'_id'*//);
+import { normalize, denormalize } from 'nosql-normalizer';
+normalize(result, //* id property, defualt :'_id'*//);
 ```
 
-### de-suppress response data by
+### de-normalize response data by
  ```javascript 
- deSuppress(response);
+ denormalize(response);
  ```
 
  ### Use it as express middleware
@@ -35,8 +35,7 @@ suppress(result, //* id property, defualt :'_id'*//);
      resolve = (req, res, next) => {
         const json = res.json;
         res.json = (result) => {
-            const suppressResult = suppress(result);
-            return json.call(res, suppressResult);
+            return json.call(res, normalize(result));
         };
         return next();
     }

@@ -1,6 +1,6 @@
 {
-  "name": "suppress-js",
-  "version": "1.0.7",
+  "name": "nosql-normalizer",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

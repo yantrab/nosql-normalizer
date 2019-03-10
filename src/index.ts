@@ -1,2 +1,2 @@
-export {deSuppress} from './de-suppress'
-export {suppress} from './suppress'
+export {deSuppress as denormalize} from './de-suppress'
+export {suppress as normalize} from './suppress'
