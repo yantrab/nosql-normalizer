@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "es6",
-    "noImplicitAny": false,
+    "sourceMap": false,
     "outDir": "./lib",
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "declaration":true,
-    "lib": [
-      "es2018"
-    ],
+    "lib": ["es2018"],
   },
-  "include": [
-    "src/**/*"
-  ],
+  "exclude": ["node_modules", "spec"]
 }
+ 
