@@ -9,7 +9,7 @@ const _suppress = (obj, idProp: string, suppressData) => {
         else {
             if (!suppressData[key]) suppressData[key] = {}
             let cloneValue = Object.assign({}, { ...obj[key] });
-            suppressData[key][id] = cloneValue; 
+            suppressData[key][id] = cloneValue;
             _suppress(cloneValue, idProp, suppressData);
             delete cloneValue[idProp]
             obj[key] = id;
@@ -21,8 +21,7 @@ export const suppress = (item: any[] | any, idProp = '_id'): any => {
     const suppressData = {};
     if (Array.isArray(item)) {
         item.forEach(i => _suppress(i, idProp, suppressData))
-    }
-    else {
+    } else {
         _suppress(item, idProp, suppressData)
     }
     if (!!Object.keys(suppressData).length)
