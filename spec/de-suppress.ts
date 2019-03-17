@@ -42,17 +42,34 @@ describe('de-suppress', function () {
     expect(time).to.be.lt(100);
   });
 
-  it('de-suppress', function () {
+  it('de-suppress1', function () {
     const heapSize1 = process.memoryUsage().heapUsed;
     const testData = require('./funds.json')
     const heapSizebefore = process.memoryUsage().heapUsed - heapSize1;
-    const cloneTestData =JSON.parse(JSON.stringify(testData));
+    const cloneTestData = JSON.parse(JSON.stringify(testData));
     let suprressData = suppress(testData);
-    
+
     const heapSize2 = process.memoryUsage().heapUsed;
     let result = deSuppress(suprressData);
     const heapSizeAfter = process.memoryUsage().heapUsed - heapSize2;
     //expect(heapSizeAfter).to.be.lt(heapSizebefore);
+    expect(result).to.deep.equal(cloneTestData)
+  });
+
+
+  it('de-suppress2', function () {
+    const testData = { "_id": "admin@admin.com", "fName": "yoyo", "lName": "toto", "roles": [0] }
+    const cloneTestData = JSON.parse(JSON.stringify(testData));
+    let suprressData = suppress(testData);
+    let result = deSuppress(suprressData);
+    expect(result).to.deep.equal(cloneTestData)
+  });
+  it('de-suppress3', function () {
+    const testData =
+      [{ "options": [{ "_id": "1", "name": "name1" }, { "_id": "2", "name": "name2" }], "selected": { "_id": "2", "name": "name2" }, "kind": "CheckboxFilter" }, { "options": [{ "_id": "1", "name": "name1" }, { "_id": "2", "name": "name2" }], "selected": { "_id": "2", "name": "name2" }, "kind": "DropdownFilter" }]
+    const cloneTestData = JSON.parse(JSON.stringify(testData));
+    let suprressData = suppress(testData);
+    let result = deSuppress(suprressData);
     expect(result).to.deep.equal(cloneTestData)
   });
 });
